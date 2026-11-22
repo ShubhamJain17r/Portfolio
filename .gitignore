@@ -1,4 +1,7 @@
-# LaTeX temporary build artifacts
+# Resume (Private - Do NOT push to GitHub)
+resume.tex
+resume.pdf
+*.pdf
 *.aux
 *.log
 *.out

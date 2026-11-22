@@ -1,11 +1,12 @@
 /**
  * Shubham Jain — Portfolio Main Scripts
- * Handles navigation, active link highlighting, project filtering, and contact actions.
+ * Handles dynamic data injection from config.js, project rendering, navigation, and contact.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
-  injectProfileData();
+  injectConfigData();
+  initFeaturedProjects();
   initProjectsList();
   initContactActions();
 });
@@ -34,26 +35,64 @@ function initNavigation() {
   }
 }
 
-function injectProfileData() {
+/**
+ * Injects all links and text values from PORTFOLIO_CONFIG.
+ * Zero hardcoded personal URLs in HTML files.
+ */
+function injectConfigData() {
   if (typeof PORTFOLIO_CONFIG === 'undefined') return;
   const { profile } = PORTFOLIO_CONFIG;
+  const { links } = profile;
 
-  document.querySelectorAll('[data-link="github"]').forEach(el => el.href = profile.links.github);
-  document.querySelectorAll('[data-link="linkedin"]').forEach(el => el.href = profile.links.linkedin);
-  document.querySelectorAll('[data-link="leetcode"]').forEach(el => el.href = profile.links.leetcode);
+  // Set hrefs dynamically
+  document.querySelectorAll('[data-link="github"]').forEach(el => {
+    el.href = links.github || '#';
+  });
+  document.querySelectorAll('[data-link="linkedin"]').forEach(el => {
+    el.href = links.linkedin || '#';
+  });
+  document.querySelectorAll('[data-link="leetcode"]').forEach(el => {
+    el.href = links.leetcode || '#';
+  });
   document.querySelectorAll('[data-link="email"]').forEach(el => {
-    el.href = `mailto:${profile.links.email}`;
+    el.href = links.email ? `mailto:${links.email}` : '#';
   });
 
-  document.querySelectorAll('[data-config="email-val"]').forEach(el => el.textContent = profile.links.email);
+  // Set text labels dynamically
+  document.querySelectorAll('[data-config="email-val"]').forEach(el => {
+    el.textContent = links.email || '';
+  });
+  document.querySelectorAll('[data-config="github-val"]').forEach(el => {
+    el.textContent = links.github ? links.github.replace(/^https?:\/\//, '') : '';
+  });
+  document.querySelectorAll('[data-config="linkedin-val"]').forEach(el => {
+    el.textContent = links.linkedin ? links.linkedin.replace(/^https?:\/\//, '') : '';
+  });
+  document.querySelectorAll('[data-config="leetcode-val"]').forEach(el => {
+    el.textContent = links.leetcode ? links.leetcode.replace(/^https?:\/\//, '') : '';
+  });
 }
 
+/**
+ * Renders the top 3 featured projects on index.html dynamically from config.js
+ */
+function initFeaturedProjects() {
+  const container = document.getElementById('featuredProjectsContainer');
+  if (!container || typeof PORTFOLIO_CONFIG === 'undefined') return;
+
+  const projects = (PORTFOLIO_CONFIG.projects || []).slice(0, 3);
+  renderProjectCards(projects, container);
+}
+
+/**
+ * Renders all projects on projects.html with domain filtering
+ */
 function initProjectsList() {
   const container = document.getElementById('projectsContainer');
   if (!container || typeof PORTFOLIO_CONFIG === 'undefined') return;
 
   const projects = PORTFOLIO_CONFIG.projects || [];
-  renderProjects(projects, container);
+  renderProjectCards(projects, container);
 
   const filterTabs = document.querySelectorAll('.filter-tab');
   filterTabs.forEach(tab => {
@@ -63,16 +102,19 @@ function initProjectsList() {
 
       const domain = tab.getAttribute('data-domain');
       if (domain === 'all') {
-        renderProjects(projects, container);
+        renderProjectCards(projects, container);
       } else {
         const filtered = projects.filter(p => p.domain === domain);
-        renderProjects(filtered, container);
+        renderProjectCards(filtered, container);
       }
     });
   });
 }
 
-function renderProjects(projects, container) {
+/**
+ * Helper to render an array of projects as clean HTML cards
+ */
+function renderProjectCards(projects, container) {
   if (!projects.length) {
     container.innerHTML = `<p style="color: var(--text-muted); font-family: var(--font-mono); padding: 2rem 0;">No projects found in this domain.</p>`;
     return;
@@ -114,7 +156,7 @@ function initContactActions() {
     copyBtn.addEventListener('click', () => {
       const email = (typeof PORTFOLIO_CONFIG !== 'undefined' && PORTFOLIO_CONFIG.profile.links.email)
         ? PORTFOLIO_CONFIG.profile.links.email
-        : 'shubham.jain@example.com';
+        : 'shubhamjain00050@gmail.com';
 
       navigator.clipboard.writeText(email).then(() => {
         const prev = copyBtn.textContent;
@@ -141,9 +183,8 @@ function initContactActions() {
       
       const recipient = (typeof PORTFOLIO_CONFIG !== 'undefined' && PORTFOLIO_CONFIG.profile.links.email)
         ? PORTFOLIO_CONFIG.profile.links.email
-        : 'shubham.jain@example.com';
+        : 'shubhamjain00050@gmail.com';
 
-      // Open mail client
       const subject = encodeURIComponent(`Message from ${name}`);
       const body = encodeURIComponent(`From: ${name} (${email})\n\nMessage:\n${message}`);
       window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
