@@ -92,8 +92,75 @@
         <a href="projects.html">All Projects (6) →</a>
       </div>
 
-      <div class="projects-list" id="featuredProjectsContainer">
-        <!-- Injected dynamically from PORTFOLIO_CONFIG in js/config.js -->
+      <div class="projects-list">
+        
+        <!-- Project 1: xArm 1S -->
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">xArm 1S Color Sorting Robot</h3>
+            <span class="project-meta-label">Robotics & Kinematics</span>
+          </div>
+          <p class="project-description">
+            A 6-DOF robotic arm automation project that detects objects using OpenCV color thresholding (HSV) and calculates inverse kinematics to pick, orient, and place colored items into target zones.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Robotics</span>
+            <span class="tag">Inverse Kinematics</span>
+            <span class="tag">Python</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">Serial UART</span>
+          </div>
+          <div class="project-actions">
+            <span class="confidential-notice">Private repository (Making public soon)</span>
+          </div>
+        </article>
+
+        <!-- Project 2: STM32 Line Follower -->
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">STM32 Autonomous High-Speed Line Follower</h3>
+            <span class="project-meta-label">Robotics & Control</span>
+          </div>
+          <p class="project-description">
+            Autonomous competition robot on STM32F446RE: bare-metal C++ closed-loop PID control, dual hardware quadrature encoders, 20 kHz ultrasonic PWM motor drive, 8-channel optical sensor array, and custom modular PCB hardware.
+          </p>
+          <div class="project-tags">
+            <span class="tag">STM32F446RE</span>
+            <span class="tag">PID Control</span>
+            <span class="tag">Embedded C++</span>
+            <span class="tag">Quadrature Encoders</span>
+            <span class="tag">PCB Design</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/ShubhamJain17r/STM32-Line-Follower-Robot" target="_blank" rel="noopener noreferrer">
+              GitHub Repository ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3: STM32 Library -->
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">STM32 Bare-Metal Peripheral Drivers Library</h3>
+            <span class="project-meta-label">Embedded Firmware</span>
+          </div>
+          <p class="project-description">
+            A bare-metal C library targeting STM32 (ARM Cortex-M) microcontrollers written directly on top of CMSIS register definitions without vendor HAL layers. Implements drivers for USART (DMA circular buffer mode), SPI, I2C, and general-purpose timers for deterministic execution and tiny binary size.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Embedded C</span>
+            <span class="tag">STM32</span>
+            <span class="tag">ARM Cortex-M</span>
+            <span class="tag">CMSIS Registers</span>
+            <span class="tag">DMA</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/ShubhamJain17r/STM32-Library" target="_blank" rel="noopener noreferrer">
+              GitHub Repository ↗
+            </a>
+          </div>
+        </article>
+
       </div>
     </section>
 
@@ -104,15 +171,22 @@
     <div class="footer-container">
       <div>Shubham Jain</div>
       <ul class="footer-links">
-        <li><a href="#" data-link="github" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="#" data-link="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="#" data-link="leetcode" target="_blank" rel="noopener noreferrer">LeetCode</a></li>
+        <li><a href="https://github.com/ShubhamJain17r" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/shubham-jain-017x/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://leetcode.com/u/Shubham_jain_017x/" target="_blank" rel="noopener noreferrer">LeetCode</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </footer>
 
-  <script src="js/config.js"></script>
-  <script src="js/main.js"></script>
+  <script>
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>

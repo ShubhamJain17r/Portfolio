@@ -51,34 +51,34 @@
           <div class="contact-row">
             <div class="contact-row-left">
               <span class="contact-row-label">Email</span>
-              <a href="#" data-link="email" class="contact-row-val" data-config="email-val">Loading...</a>
+              <a href="mailto:shubhamjain00050@gmail.com" class="contact-row-val" id="emailValText">shubhamjain00050@gmail.com</a>
             </div>
             <button class="btn-copy" id="copyEmailBtn" type="button">Copy</button>
           </div>
 
           <!-- GitHub Row -->
-          <a href="#" target="_blank" rel="noopener noreferrer" class="contact-row" data-link="github">
+          <a href="https://github.com/ShubhamJain17r" target="_blank" rel="noopener noreferrer" class="contact-row">
             <div class="contact-row-left">
               <span class="contact-row-label">GitHub</span>
-              <span class="contact-row-val" data-config="github-val">Loading...</span>
+              <span class="contact-row-val">@ShubhamJain17r</span>
             </div>
             <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">↗</span>
           </a>
 
           <!-- LinkedIn Row -->
-          <a href="#" target="_blank" rel="noopener noreferrer" class="contact-row" data-link="linkedin">
+          <a href="https://www.linkedin.com/in/shubham-jain-017x/" target="_blank" rel="noopener noreferrer" class="contact-row">
             <div class="contact-row-left">
               <span class="contact-row-label">LinkedIn</span>
-              <span class="contact-row-val" data-config="linkedin-val">Loading...</span>
+              <span class="contact-row-val">shubham-jain-017x</span>
             </div>
             <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">↗</span>
           </a>
 
           <!-- LeetCode Row -->
-          <a href="#" target="_blank" rel="noopener noreferrer" class="contact-row" data-link="leetcode">
+          <a href="https://leetcode.com/u/Shubham_jain_017x/" target="_blank" rel="noopener noreferrer" class="contact-row">
             <div class="contact-row-left">
               <span class="contact-row-label">LeetCode</span>
-              <span class="contact-row-val" data-config="leetcode-val">Loading...</span>
+              <span class="contact-row-val">Shubham_jain_017x (350+ Solved)</span>
             </div>
             <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">↗</span>
           </a>
@@ -121,15 +121,61 @@
     <div class="footer-container">
       <div>Shubham Jain</div>
       <ul class="footer-links">
-        <li><a href="#" data-link="github" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="#" data-link="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="#" data-link="leetcode" target="_blank" rel="noopener noreferrer">LeetCode</a></li>
+        <li><a href="https://github.com/ShubhamJain17r" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/shubham-jain-017x/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://leetcode.com/u/Shubham_jain_017x/" target="_blank" rel="noopener noreferrer">LeetCode</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </footer>
 
-  <script src="js/config.js"></script>
-  <script src="js/main.js"></script>
+  <script>
+    // Mobile navigation toggle
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+
+    // 1-Click Copy Email
+    const copyBtn = document.getElementById('copyEmailBtn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', async () => {
+        try {
+          await navigator.clipboard.writeText('shubhamjain00050@gmail.com');
+          copyBtn.textContent = 'Copied!';
+          setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+        } catch (err) {
+          copyBtn.textContent = 'Failed';
+          setTimeout(() => { copyBtn.textContent = 'Copy'; }, 2000);
+        }
+      });
+    }
+
+    // Direct mailto Form Trigger
+    const form = document.getElementById('contactForm');
+    const statusDiv = document.getElementById('formStatus');
+    if (form) {
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('formName').value.trim();
+        const email = document.getElementById('formEmail').value.trim();
+        const msg = document.getElementById('formMessage').value.trim();
+        
+        const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${msg}`);
+        
+        window.location.href = `mailto:shubhamjain00050@gmail.com?subject=${subject}&body=${body}`;
+        
+        if (statusDiv) {
+          statusDiv.textContent = 'Opening your email client...';
+          statusDiv.style.color = 'var(--accent)';
+          statusDiv.style.display = 'block';
+        }
+      });
+    }
+  </script>
 </body>
 </html>

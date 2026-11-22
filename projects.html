@@ -40,16 +40,173 @@
 
     <!-- Filter Tabs -->
     <div class="filter-tabs">
-      <button class="filter-tab active" data-domain="all">All</button>
-      <button class="filter-tab" data-domain="robotics">Robotics</button>
-      <button class="filter-tab" data-domain="firmware">Embedded Firmware</button>
-      <button class="filter-tab" data-domain="medtech">MedTech Hardware</button>
-      <button class="filter-tab" data-domain="algorithms">Algorithms & Hackathons</button>
+      <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="robotics">Robotics</button>
+      <button class="filter-tab" data-filter="firmware">Embedded Firmware</button>
+      <button class="filter-tab" data-filter="medtech">MedTech Hardware</button>
+      <button class="filter-tab" data-filter="algorithms">Algorithms & Hackathons</button>
     </div>
 
-    <!-- Projects List -->
-    <div class="projects-list" id="projectsContainer">
-      <!-- Injected by js/main.js from js/config.js -->
+    <!-- Projects List (Static HTML) -->
+    <div class="projects-list" id="projectsList">
+      
+      <!-- Project 1: xArm 1S -->
+      <article class="project-item" data-domain="robotics">
+        <div class="project-header">
+          <h3 class="project-title">xArm 1S Color Sorting Robot</h3>
+          <span class="project-meta-label">Robotics & Kinematics</span>
+        </div>
+        <p class="project-description">
+          A 6-DOF robotic arm automation project that detects objects using OpenCV color thresholding (HSV) and calculates inverse kinematics to pick, orient, and place colored items into target zones.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Robotics</span>
+          <span class="tag">Inverse Kinematics</span>
+          <span class="tag">Python</span>
+          <span class="tag">OpenCV</span>
+          <span class="tag">Serial UART</span>
+        </div>
+        <div class="project-actions">
+          <span class="confidential-notice">Private repository (Making public soon)</span>
+        </div>
+      </article>
+
+      <!-- Project 2: STM32 Line Follower -->
+      <article class="project-item" data-domain="robotics">
+        <div class="project-header">
+          <h3 class="project-title">STM32 Autonomous High-Speed Line Follower</h3>
+          <span class="project-meta-label">Robotics & Control</span>
+        </div>
+        <p class="project-description">
+          Autonomous competition robot on STM32F446RE: bare-metal C++ closed-loop PID control, dual hardware quadrature encoders, 20 kHz ultrasonic PWM motor drive, 8-channel optical sensor array, and custom modular PCB hardware.
+        </p>
+        <div class="project-tags">
+          <span class="tag">STM32F446RE</span>
+          <span class="tag">PID Control</span>
+          <span class="tag">Embedded C++</span>
+          <span class="tag">Quadrature Encoders</span>
+          <span class="tag">PCB Design</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/ShubhamJain17r/STM32-Line-Follower-Robot" target="_blank" rel="noopener noreferrer">
+            GitHub Repository ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 3: STM32 Library -->
+      <article class="project-item" data-domain="firmware">
+        <div class="project-header">
+          <h3 class="project-title">STM32 Bare-Metal Peripheral Drivers Library</h3>
+          <span class="project-meta-label">Embedded Firmware</span>
+        </div>
+        <p class="project-description">
+          A bare-metal C library targeting STM32 (ARM Cortex-M) microcontrollers written directly on top of CMSIS register definitions without vendor HAL layers. Implements drivers for USART (DMA circular buffer mode), SPI, I2C, and general-purpose timers for deterministic execution and tiny binary size.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Embedded C</span>
+          <span class="tag">STM32</span>
+          <span class="tag">ARM Cortex-M</span>
+          <span class="tag">CMSIS Registers</span>
+          <span class="tag">DMA</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/ShubhamJain17r/STM32-Library" target="_blank" rel="noopener noreferrer">
+            GitHub Repository ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 4: STM32 Components -->
+      <article class="project-item" data-domain="firmware">
+        <div class="project-header">
+          <h3 class="project-title">STM32 Modular Components Library</h3>
+          <span class="project-meta-label">Embedded Firmware</span>
+        </div>
+        <p class="project-description">
+          Reusable device driver modules for common external hardware components including OLED (SSD1306) and color TFT (ST7789) displays, 6-axis IMUs (MPU6050), and multi-channel external ADCs with non-blocking interfaces and timeout handling.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Embedded C</span>
+          <span class="tag">I2C</span>
+          <span class="tag">SPI</span>
+          <span class="tag">SSD1306</span>
+          <span class="tag">ST7789</span>
+          <span class="tag">MPU6050</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/ShubhamJain17r/STM32-Components" target="_blank" rel="noopener noreferrer">
+            GitHub Repository ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 5: Dhritam MedTech -->
+      <article class="project-item" data-domain="medtech">
+        <div class="project-header">
+          <h3 class="project-title">Dhritam Medical Tech Hardware Architecture</h3>
+          <span class="project-meta-label">MedTech Hardware</span>
+        </div>
+        <p class="project-description">
+          Hardware architecture and circuit design for point-of-care medical diagnostic instrumentation. Designed 4-layer mixed-signal PCBs in KiCad, conditioned low-noise analog bio-signals (AFE), and managed isolated battery power rails. (Work done as Lead Hardware Engineer at Dhritam).
+        </p>
+        <div class="project-tags">
+          <span class="tag">KiCad</span>
+          <span class="tag">PCB Design</span>
+          <span class="tag">Analog Front-End</span>
+          <span class="tag">Bio-Signals</span>
+          <span class="tag">Power Rails</span>
+        </div>
+        <div class="project-actions">
+          <span class="confidential-notice">Private repository (Confidential startup hardware)</span>
+        </div>
+      </article>
+
+      <!-- Project 6: JPMC Hackathon -->
+      <article class="project-item" data-domain="algorithms">
+        <div class="project-header">
+          <h3 class="project-title">JPMorganChase Code For Good Hackathon 2026</h3>
+          <span class="project-meta-label">Hackathons</span>
+        </div>
+        <p class="project-description">
+          National Finalist at JPMorganChase's 24-hour Code For Good Hackathon 2026. Built and demonstrated a working platform for non-profit organizations, collaborating in an agile team under intense time constraints.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Hackathon</span>
+          <span class="tag">JPMorganChase</span>
+          <span class="tag">Finalist</span>
+          <span class="tag">Full-Stack</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://github.com/ShubhamJain17r" target="_blank" rel="noopener noreferrer">
+            GitHub Profile ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 7: LeetCode -->
+      <article class="project-item" data-domain="algorithms">
+        <div class="project-header">
+          <h3 class="project-title">LeetCode & Algorithmic Problem Solving</h3>
+          <span class="project-meta-label">Algorithms</span>
+        </div>
+        <p class="project-description">
+          Over 350 problems solved covering graph traversal (BFS/DFS, Dijkstra, topological sort), dynamic programming, binary trees, and bit manipulation. Focused on algorithmic fundamentals useful for robotics path planning and state machines.
+        </p>
+        <div class="project-tags">
+          <span class="tag">C++</span>
+          <span class="tag">Algorithms</span>
+          <span class="tag">Graph Theory</span>
+          <span class="tag">Dynamic Programming</span>
+          <span class="tag">Motion Math</span>
+        </div>
+        <div class="project-actions">
+          <a href="https://leetcode.com/u/Shubham_jain_017x/" target="_blank" rel="noopener noreferrer">
+            LeetCode Profile ↗
+          </a>
+        </div>
+      </article>
+
     </div>
 
   </main>
@@ -59,15 +216,43 @@
     <div class="footer-container">
       <div>Shubham Jain</div>
       <ul class="footer-links">
-        <li><a href="#" data-link="github" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="#" data-link="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="#" data-link="leetcode" target="_blank" rel="noopener noreferrer">LeetCode</a></li>
+        <li><a href="https://github.com/ShubhamJain17r" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/shubham-jain-017x/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://leetcode.com/u/Shubham_jain_017x/" target="_blank" rel="noopener noreferrer">LeetCode</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </footer>
 
-  <script src="js/config.js"></script>
-  <script src="js/main.js"></script>
+  <script>
+    // Mobile navigation toggle
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+
+    // Client-side domain filtering (zero external dependencies)
+    const tabs = document.querySelectorAll('.filter-tab');
+    const items = document.querySelectorAll('.project-item');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const filter = tab.getAttribute('data-filter');
+        items.forEach(item => {
+          if (filter === 'all' || item.getAttribute('data-domain') === filter) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>

@@ -109,15 +109,22 @@
     <div class="footer-container">
       <div>Shubham Jain</div>
       <ul class="footer-links">
-        <li><a href="#" data-link="github" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="#" data-link="linkedin" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="#" data-link="leetcode" target="_blank" rel="noopener noreferrer">LeetCode</a></li>
+        <li><a href="https://github.com/ShubhamJain17r" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/shubham-jain-017x/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://leetcode.com/u/Shubham_jain_017x/" target="_blank" rel="noopener noreferrer">LeetCode</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </footer>
 
-  <script src="js/config.js"></script>
-  <script src="js/main.js"></script>
+  <script>
+    const menuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    if (menuBtn && navLinks) {
+      menuBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+      });
+    }
+  </script>
 </body>
 </html>
