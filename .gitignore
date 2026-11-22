@@ -2,6 +2,7 @@
 resume.tex
 resume.pdf
 *.pdf
+*.bak
 *.aux
 *.log
 *.out
