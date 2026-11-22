@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shubham Jain — Hardware Engineering, Embedded Systems, and Robotics.">
+  <title>Shubham Jain</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">Shubham Jain</a>
+
+      <button class="menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link active">Home</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="research.html" class="nav-link">Journey & Goals</a></li>
+        <li><a href="hardware.html" class="nav-link">Hardware Lab</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-intro">Hello, I'm</div>
+      <h1 class="hero-name">Shubham Jain</h1>
+      <p class="hero-text">
+        I am a 3rd-year undergraduate student at <strong>GLA University</strong> (5th semester, CPI 8.7) and spent my 3rd semester as a <strong>visiting student at IIT Gandhinagar</strong>. 
+        I love tinkering with hardware, building embedded systems, designing PCBs, and working on robotics projects.
+      </p>
+      <p class="hero-text">
+        Right now, I am the <strong>Lead Hardware Engineer at Dhritam</strong> (a medical technology startup) where I work on mixed-signal hardware design and bio-signal acquisition. 
+        Looking forward, I aim to pursue an <strong>MS by Research in Robotics at IIIT Hyderabad</strong>, and eventually a Ph.D. in robotics.
+      </p>
+      
+      <div class="hero-links">
+        <a href="projects.html" class="hero-link">View Projects →</a>
+        <a href="research.html" class="hero-link">Academic Journey & Goals →</a>
+        <a href="hardware.html" class="hero-link">Hardware & Tools →</a>
+        <a href="contact.html" class="hero-link">Get in Touch →</a>
+      </div>
+    </section>
+
+    <!-- Key Highlights -->
+    <div class="highlights-box">
+      <div class="highlight-item">
+        <div class="highlight-label">Academics</div>
+        <div class="highlight-value">8.7 CPI</div>
+        <div class="highlight-note">GLA University (3rd Yr, 5th Sem)</div>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-label">Exchange</div>
+        <div class="highlight-value">IIT Gandhinagar</div>
+        <div class="highlight-note">Visiting Student (Semester 3)</div>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-label">Work</div>
+        <div class="highlight-value">Dhritam</div>
+        <div class="highlight-note">Lead Hardware Engineer (MedTech)</div>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-label">Problem Solving</div>
+        <div class="highlight-value">350+ Solved</div>
+        <div class="highlight-note">LeetCode Algorithms & Data Structures</div>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-label">Hackathon</div>
+        <div class="highlight-value">Finalist</div>
+        <div class="highlight-note">JPMorganChase Code For Good 2026</div>
+      </div>
+    </div>
+
+    <!-- Featured Projects -->
+    <section class="section">
+      <div class="section-title">
+        <span>Selected Projects</span>
+        <a href="projects.html">All Projects (6) →</a>
+      </div>
+
+      <div class="projects-list">
+        
+        <!-- Project 1 -->
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">xArm 1S Color Sorting Robot</h3>
+            <span class="project-meta-label">Robotics & Kinematics</span>
+          </div>
+          <p class="project-description">
+            A 6-DOF robotic arm automation project that detects objects using OpenCV color thresholding (HSV) and calculates inverse kinematics to pick, orient, and place colored items into target zones.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Robotics</span>
+            <span class="tag">Inverse Kinematics</span>
+            <span class="tag">Python</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">Serial UART</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/ShubhamJain17r/xArm-1S-Color-Sorting-Robot" target="_blank" rel="noopener noreferrer">
+              GitHub Repository ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">STM32 Bare-Metal Peripheral Drivers Library</h3>
+            <span class="project-meta-label">Embedded Firmware</span>
+          </div>
+          <p class="project-description">
+            A bare-metal C library targeting STM32 (ARM Cortex-M) microcontrollers written directly on top of CMSIS register definitions without vendor HAL layers. Implements drivers for USART (DMA circular buffer mode), SPI, I2C, and general-purpose timers for deterministic execution and tiny binary size.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Embedded C</span>
+            <span class="tag">STM32</span>
+            <span class="tag">ARM Cortex-M</span>
+            <span class="tag">CMSIS Registers</span>
+            <span class="tag">DMA</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/ShubhamJain17r/STM32-Library" target="_blank" rel="noopener noreferrer">
+              GitHub Repository ↗
+            </a>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-item">
+          <div class="project-header">
+            <h3 class="project-title">Dhritam Medical Tech Hardware Architecture</h3>
+            <span class="project-meta-label">MedTech Hardware</span>
+          </div>
+          <p class="project-description">
+            Hardware architecture and circuit design for point-of-care medical diagnostic instrumentation. Designed 4-layer mixed-signal PCBs in KiCad, conditioned low-noise analog bio-signals (AFE), and managed isolated battery power rails. (Work done as Lead Hardware Engineer at Dhritam).
+          </p>
+          <div class="project-tags">
+            <span class="tag">KiCad</span>
+            <span class="tag">PCB Design</span>
+            <span class="tag">Analog Front-End</span>
+            <span class="tag">Bio-Signals</span>
+            <span class="tag">Power Rails</span>
+          </div>
+          <div class="project-actions">
+            <span class="confidential-notice">Private repository (Confidential startup hardware)</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div>Shubham Jain</div>
+      <ul class="footer-links">
+        <li><a href="https://github.com/ShubhamJain17r" target="_blank" rel="noopener noreferrer" data-link="github">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/shubhamjain17r" target="_blank" rel="noopener noreferrer" data-link="linkedin">LinkedIn</a></li>
+        <li><a href="https://leetcode.com/ShubhamJain17r" target="_blank" rel="noopener noreferrer" data-link="leetcode">LeetCode</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

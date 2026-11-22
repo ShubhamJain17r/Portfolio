@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Shubham Jain — Hardware & Robotics.">
+  <title>Contact — Shubham Jain</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-brand">Shubham Jain</a>
+
+      <button class="menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="research.html" class="nav-link">Journey & Goals</a></li>
+        <li><a href="hardware.html" class="nav-link">Hardware Lab</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <div class="page-header">
+      <h1 class="page-title">Contact</h1>
+      <p class="page-subtitle">
+        Feel free to reach out if you'd like to talk about hardware engineering, robotics research, or collaboration.
+      </p>
+    </div>
+
+    <div class="contact-layout">
+      
+      <!-- Direct Links -->
+      <div class="contact-box">
+        <h2>Direct Contact</h2>
+        <p>The fastest way to reach me is by email or through my profiles below:</p>
+
+        <div class="contact-links-list">
+          
+          <!-- Email Row with Copy Button -->
+          <div class="contact-row">
+            <div class="contact-row-left">
+              <span class="contact-row-label">Email</span>
+              <a href="mailto:shubhamjain00050@gmail.com" data-link="email" class="contact-row-val" data-config="email-val">shubhamjain00050@gmail.com</a>
+            </div>
+            <button class="btn-copy" id="copyEmailBtn" type="button">Copy</button>
+          </div>
+
+          <!-- GitHub Row -->
+          <a href="https://github.com/ShubhamJain17r" target="_blank" rel="noopener noreferrer" class="contact-row" data-link="github">
+            <div class="contact-row-left">
+              <span class="contact-row-label">GitHub</span>
+              <span class="contact-row-val">github.com/ShubhamJain17r</span>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">↗</span>
+          </a>
+
+          <!-- LinkedIn Row -->
+          <a href="https://linkedin.com/in/shubhamjain17r" target="_blank" rel="noopener noreferrer" class="contact-row" data-link="linkedin">
+            <div class="contact-row-left">
+              <span class="contact-row-label">LinkedIn</span>
+              <span class="contact-row-val">linkedin.com/in/shubhamjain17r</span>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">↗</span>
+          </a>
+
+          <!-- LeetCode Row -->
+          <a href="https://leetcode.com/ShubhamJain17r" target="_blank" rel="noopener noreferrer" class="contact-row" data-link="leetcode">
+            <div class="contact-row-left">
+              <span class="contact-row-label">LeetCode</span>
+              <span class="contact-row-val">leetcode.com/ShubhamJain17r</span>
+            </div>
+            <span style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-dim);">↗</span>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- Quick Message Form -->
+      <div class="contact-box">
+        <h2>Send a Message</h2>
+        <p>You can also send a message directly using the form below:</p>
+
+        <form id="contactForm">
+          <div class="form-field">
+            <label for="formName">Your Name</label>
+            <input type="text" id="formName" placeholder="Name" required>
+          </div>
+
+          <div class="form-field">
+            <label for="formEmail">Your Email</label>
+            <input type="email" id="formEmail" placeholder="email@domain.com" required>
+          </div>
+
+          <div class="form-field">
+            <label for="formMessage">Message</label>
+            <textarea id="formMessage" placeholder="Your message..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send Email</button>
+          <div class="form-status" id="formStatus"></div>
+        </form>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div>Shubham Jain</div>
+      <ul class="footer-links">
+        <li><a href="https://github.com/ShubhamJain17r" target="_blank" rel="noopener noreferrer" data-link="github">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/shubhamjain17r" target="_blank" rel="noopener noreferrer" data-link="linkedin">LinkedIn</a></li>
+        <li><a href="https://leetcode.com/ShubhamJain17r" target="_blank" rel="noopener noreferrer" data-link="leetcode">LeetCode</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <script src="js/config.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
